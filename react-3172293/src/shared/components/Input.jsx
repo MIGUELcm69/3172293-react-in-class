@@ -2,15 +2,64 @@ export default function Input({
     label,
     htmlFor,
     type= "text",
+    variant= "primary",
+    size= "md",
     ...props
 }){
 
+    // Obligatorio que estos valores tienen que ser con variables
+    const variants = {
+        primary:`
+        border-brand
+        bg-background
+        `,
+        secondary:`
+        border-red-950
+        `,
+        tertiary:`
+        border-green-950
+        `,
+    }
+    const sizes = {
+        sm:`
+        h-8
+        `,
+        md:`
+        h-10
+        `,
+        lg:`
+       h-12
+        `,
+    }
 
+    
     return(
         <div>
+            <label
+            htmlFor={htmlFor}
+            className={`
+            
+            block
+            text-caption
+            text-secondary
+            ${
+
+                size === "sm"
+                ? "-mb-2"
+                : size === "md"
+                ? "mb-0"
+                :"mb-1"
+
+            }
+            
+            `}
+                >
+
+                </label>        
 
             {/* Label */}
             <label 
+            // htmlFor con kebab-case
                 htmlFor={htmlFor}
                 className="
                     block
@@ -45,21 +94,25 @@ export default function Input({
                     
                     {/* Input visual */}
                     <input
+                        id={htmlFor}
                         type={type}
-                        className="
+                        className={`
                         relative
-                        w-full
-                        h-10
+                        w-80
                         rounded-md
-                        border-border-black
+                        border
                         px-4
                         text-body
-
                         focus:outline-none
                         focus:ring-2
                         focus:ring-ring
                         focus:ring-brand
-                        "
+                        before:content-['']
+                        before:absolute
+
+                        ${variants[variant]}
+                        ${sizes[size]}
+                        `}
                         {...props}
                     />
             </div>
