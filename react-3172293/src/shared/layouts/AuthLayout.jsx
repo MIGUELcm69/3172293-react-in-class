@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 import authBg from "@/assets/images/bg-1.png"; 
 import { Input } from "@/shared"; 
 import { Button } from "@/shared"; 
+import DeleteCounter2 from "../components/DeleteCounter2";
+import EffectDemo from "../components/EffectDemo";
 
 export default function AuthLayout(){
   return (
@@ -66,8 +68,19 @@ export default function AuthLayout(){
             onClick= {() => console.log("Boton presionado")}
             > Guardar
             </Button>
+          </div>{/*Actions*/ }
 
+          {/* Imprementacion del estado de useState */}
+          <div>
+            <h1>Ejemplo sin useState</h1>
+            <DeleteCounter2/>
           </div>
+          {/* Imprementacion del estado de useState */}
+          <div>
+            <h1>Ejemplo sin useState</h1>
+            <EffectDemo/>
+          </div>
+
           <Outlet/>
         </main>
       </div>
