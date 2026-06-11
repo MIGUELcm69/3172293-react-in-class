@@ -1,13 +1,27 @@
 import { Outlet } from "react-router-dom";
+import { useState, useEffect} from "react";
 import authBg from "@/assets/images/bg-1.png"; 
-import { Input } from "@/shared"; 
-import { Button } from "@/shared"; 
-import DeleteCounter2 from "../components/DeleteCounter2";
-import EffectDemo from "../components/EffectDemo";
+import { 
+  Input,
+  Button,
+  DeleteCounter2, 
+  Select,
+  Checkbox
+} 
+  from "@/shared"; 
+import { getDocumentTypes } from "../../services/selectServices";
+
 
 export default function AuthLayout(){
+   // Estado para los tipos de documentos
+ const[documentTypes, setDocumentTypes] = useState([])
+
+//  Uso del estado useEffect
+ useEffect(() => {
+  getDocumentTypes().then(setDocumentTypes);
+ },[])
   return (
-    <>
+      <>
       <div 
         className="min-h-screen w-full"
         style={{
@@ -68,18 +82,33 @@ export default function AuthLayout(){
             onClick= {() => console.log("Boton presionado")}
             > Guardar
             </Button>
-          </div>{/*Actions*/ }
+          </div>
+          
+          {/*Actions*/ }
 
           {/* Imprementacion del estado de useState */}
-          <div>
+          {/* <div className="mt-10">
             <h1>Ejemplo sin useState</h1>
             <DeleteCounter2/>
-          </div>
-          {/* Imprementacion del estado de useState */}
-          <div>
-            <h1>Ejemplo sin useState</h1>
-            <EffectDemo/>
-          </div>
+          </div> */}
+
+          {/* Imprementacion del estado de useEffect
+          <div className="mt-12">
+            <CounterEffect/>
+          </div> */}
+
+            {/* Aqui es para escoger la opcion */}
+          {/* <Select 
+            label="Tipos de documentos"
+            name="userDocumentTypes"
+            htmlFor="userDocumentTypes"
+            options={documentTypes}
+            /> */}
+
+            {/* <Checkbox
+            id="isStaff"
+            name="isStaff"
+             */}
 
           <Outlet/>
         </main>
@@ -87,3 +116,4 @@ export default function AuthLayout(){
     </>
   );
 }
+    

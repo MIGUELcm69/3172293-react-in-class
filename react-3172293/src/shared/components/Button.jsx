@@ -12,7 +12,7 @@ export default function Button({
 }){
     const variants = {
         primary: "bg-brand text-text-inverse hover:bg-brand-hover",
-        secondary: "border border-brand bg-brand-soft  text-primary hover:bg-brand-hover-soft-hover", 
+        secondary: "border border-[var(--color-secondary-500)] bg-[var(--color-secondary-50)]  text[var(--color-secondary-700)] hover:bg-[var(--color-secondary-100)]", 
        };
 
 const sizes = {
