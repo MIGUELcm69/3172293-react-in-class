@@ -52,12 +52,12 @@ export default function AuthLayout(){
             placeholder="Escribe tu telefono"
             htmlFor="user-phone"
           />
-          <Input 
-            label="Borar tipo de documento"
-            type="text"
-            placeholder="Escribe tu telefono"
-            htmlFor="name"
-          />
+            <Select 
+            label="Tipos de documentos"
+            name="userDocumentTypes"
+            htmlFor="userDocumentTypes"
+            options={documentTypes}
+            />
           <Input 
             label="Documento"
             type="text"

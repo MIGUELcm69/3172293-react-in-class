@@ -2,9 +2,12 @@
 
 export default function Select({
     label,
+    error,
     htmlFor,
     name,
     options = [],
+    value,     
+    onChange,  
 }){
 
     return(
@@ -25,7 +28,9 @@ export default function Select({
         
           <select 
             name={name} 
-            id="htmlFor"
+            id={htmlFor}
+            value={value} 
+            onChange={onChange} 
             className="
             w-80
             h-12
@@ -41,11 +46,14 @@ export default function Select({
             <option value="">Seleccione una opcion</option>
 
             {options.map((opt) => (
-                <option key={opt.id} value={opt.id}>
+                <option key={opt.value} value={opt.value}>
                     {opt.label}
                 </option>
             ))}         
           </select>
+          {error && (
+            <p className="text-caption text-red-800 place-self-start mt-1">{error}</p>
+          )}
         </div>
     )
 }
