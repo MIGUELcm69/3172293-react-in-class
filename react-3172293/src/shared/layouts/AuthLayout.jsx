@@ -3,10 +3,9 @@ import { useState, useEffect} from "react";
 import authBg from "@/assets/images/bg-1.png"; 
 import { 
   Input,
-  Button,
-  DeleteCounter2, 
+  Button, 
   Select,
-  Checkbox
+  // Checkbox
 } 
   from "@/shared"; 
 import { getDocumentTypes } from "../../services/selectServices";
@@ -116,4 +115,3 @@ export default function AuthLayout(){
     </>
   );
 }
-    

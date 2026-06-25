@@ -83,3 +83,4 @@ export const IconButton = React.forwardRef(function IconButton(
     </button>
   );
 });
+export default IconButton;

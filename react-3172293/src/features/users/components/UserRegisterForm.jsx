@@ -5,12 +5,14 @@ import{
     Select,
     Checkbox,
     Button,
+    FileInput,
+    StatusSwitch,
     // IconButton
  } from "@/shared";
  import { getDocumentTypes } from "../../../services/selectServices";
  import { useNavigate} from "react-router-dom"
  import { userSchema} from "../schemas/userSchema"
-//  import { ArrowLeft, Save, X } from "lucide-react";
+ import { User  } from "lucide-react";
 
 
 export  default function UserRegisterForm() {
@@ -26,15 +28,19 @@ export  default function UserRegisterForm() {
         userDocumentTypes:"",
         userDocumentNumber:"",
         userPassword:"",
-        // Flags Booleans
+        userImage: [],
+
         isStaff: false,
         isActive: true,
         isSuperUser: false,
-
     })
 
+  // Estado que controla el switch
+  const [isActive, setIsActive] = useState(true);
 
-  
+  const handleStatusChange = (value) => {
+    setIsActive(value);
+  }
 
     // Handle generico
 
@@ -199,6 +205,16 @@ export  default function UserRegisterForm() {
               error={errors.userPassword}
               onChange={handleChange}
           />
+
+          <div className="p-6 max-w-md space-y-4">
+            <StatusSwitch
+            checked={isActive}
+            onChange={handleStatusChange}
+            size="md"
+            />
+          </div>
+
+
           {/* Checkbox */}
           <div className="grid gap-4 my-2 ">
 
@@ -225,6 +241,17 @@ export  default function UserRegisterForm() {
           onChange={handleChange}
           />
 
+          <FileInput
+          value={formData.userImage}
+          onChange={(files) =>
+            setFormData((prev) => ({ ...prev, userImage: files}))
+          }
+          multiple={true}
+          />
+          {errors.userImage && (
+            <span className="text-red-500 text-sm">{errors.userImage}</span>
+          )}
+
           </div>
           {/* Actions */}
             <div className="flex gap-6 items-center">
@@ -244,6 +271,7 @@ export  default function UserRegisterForm() {
             > Guardar
             </Button>
           </div>
+          <User />
           </form>
         </div>
     )
