@@ -17,6 +17,7 @@ export{ default as FileInput }from "./components/FileInput";
 export * from "./components/Dropdown";
 export{ default as StatusSwitch }from "./components/StatusSwitch";
 export{ default as DataTable }from "./components/DataTable";
+export{ default as Card }from "./components/Card";
 
 
 

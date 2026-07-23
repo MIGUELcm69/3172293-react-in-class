@@ -1,11 +1,11 @@
 export const userReportFields = [
 {
-    key: "name",
+    key: "userName",
     label: "Nombre",
     default: true
 },
 {
-    key: "email",
+    key: "userEmail",
     label: "Email",
     default: true
 },
@@ -20,7 +20,7 @@ export const userReportFields = [
     default: true
 },
 {
-    key: "phone",
+    key: "userPhone",
     label: "Teléfono",
     default: false
 },

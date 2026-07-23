@@ -248,6 +248,8 @@ export  default function UserRegisterForm() {
           }
           multiple={true}
           />
+
+          
           {errors.userImage && (
             <span className="text-red-500 text-sm">{errors.userImage}</span>
           )}
