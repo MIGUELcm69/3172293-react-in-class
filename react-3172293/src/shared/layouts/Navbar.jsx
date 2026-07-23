@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo de marca */}
           <div className=" hidden sm:block items-center">
-            <Link to={"/dashboard/home"} className="text-h1 font-heading">
+            <Link to={"/dashboard"} className="text-h1 font-heading">
               <img src={logo} alt="logo" className="h-12" />
             </Link>
           </div>
@@ -85,12 +85,17 @@ export default function Navbar() {
                 </DropdownTrigger>
                 <DropdownContent>
                   <DropdownItem>Gestion de producto </DropdownItem>
-                  <DropdownItem>Gestion de usuarios</DropdownItem>
-                  <DropdownItem>
-                    <Link to = "/dashboard/userList" className="block w-full">
-                    Listar usuarios
-                    </Link>  
-                  </DropdownItem>
+                <DropdownItem>
+                <Link to="/dashboard/createUser" className="block w-full">
+                Crear usuarios
+                </Link>
+                </DropdownItem>
+  
+                <DropdownItem>
+                <Link to="/dashboard/userList" className="block w-full">
+                Listar usuarios
+                </Link>
+                </DropdownItem>
                   <DropdownItem>cerrrar sesion</DropdownItem>
                 </DropdownContent>
               </Dropdown>

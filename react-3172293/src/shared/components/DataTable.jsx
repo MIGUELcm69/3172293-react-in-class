@@ -5,7 +5,7 @@ useReactTable,          // Hook que crea la instancia de la tabla
 getCoreRowModel,        // Modelo base de filas (sin filtros ni paginación)
 flexRender,             // Permite renderizar contenido dinámico de columnas
 getPaginationRowModel,  // Modelo de filas con paginación
-getFilteredRowModel     // Modelo de filas filtradas
+getFilteredRowModel    // Modelo de filas filtradas
 
 } from "@tanstack/react-table"
 

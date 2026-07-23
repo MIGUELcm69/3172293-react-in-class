@@ -255,11 +255,11 @@ export  default function UserRegisterForm() {
           </div>
           {/* Actions */}
             <div className="flex gap-6 items-center">
-           <Button
+            <Button
             variant="secondary"
             size="sm"
             type="button"
-            onClick= {() => console.log("Boton Cancelar")}
+            onClick= {() => navigate(-1)}
             > cancelar
             </Button>
             

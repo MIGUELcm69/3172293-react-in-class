@@ -4,6 +4,7 @@ import { AuthLayout, DashboardLayout } from "@/shared";
 import  UserListPage  from "../features/users/pages/UserListPage";
 import { UserRegisterForm } from "../features/users";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,9 +23,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout/>,
     children: [
-      { index: true, element: <UserRegisterForm /> },
+      { index: true,},
       // { path: "/dashboard/auth", element: <h1>Hello2</h1>  },
-      { path: "/dashboard/userList", element: <UserListPage/>},
+      { path: "createUser", element: <UserRegisterForm />},
+      { path: "userList", element: <UserListPage/>},
     ],
   },
 ]);

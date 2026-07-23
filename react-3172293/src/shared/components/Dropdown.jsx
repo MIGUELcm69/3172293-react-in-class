@@ -100,6 +100,8 @@ export function DropdownContent({ children, className = "" }) {
         overflow-hidden
         hover:shadow-black
         transition-shadow duration-700
+        z-50
+        right-0
         ${className}
       `}
     >
